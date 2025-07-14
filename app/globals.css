@@ -1,26 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Belanosima:wght@400&family=Poppins:wght@400;700&display=swap");
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--Sky-Blue-50);
+  --foreground: var(--Lake-Blue-950);
+
+  /* Portfolio Custom Properties */
+  --Sky-Blue-50: #f0fdff;
+  --Responsive-Margin---Vertical: 56px;
+  --Responsive-Margin: 96px;
+  --Tree-Green-500: #55b95f;
+  --Font-Family-Font-Serif: Belanosima;
+  --Size-2xl: 31px;
+  --Gradient-Light-Green-to-Blue---Header-Logo: linear-gradient(
+    90deg,
+    #55b95f 0%,
+    #31579c 100%
+  );
+  --Spacing-2: 8px;
+  --Spacing-4: 16px;
+  --Border-Radius-rounded-md: 6px;
+  --Lake-Blue-950: #111e36;
+  --Font-Family-Font-Sans-Serif: Poppins;
+  --Size-lg: 20px;
+  --Lake-Blue-800: #2d436c;
+  --Responsive-Double-Margin: 192px;
+  --Intro-Intro-Text-Min-Width: 450px;
+  --Intro-Intro-Text-Max-Width: 710px;
+  --Size-3xl: 39px;
+  --Gradient-Light-Green-to-Blue---Intro-Text: linear-gradient(
+    90deg,
+    #55b95f 20.77%,
+    #31579c 67.31%
+  );
+  --Responsive-Gutter: 32px;
+  --Credentials-Box-Min-Width: 210px;
+  --Credentials-Box-Min-Height: 157px;
+  --Credentials-Box-Padding: 25px;
+  --Tree-Green-300: #75da81;
+  --Credentials-Box-Text-Min-Width: 210px;
+  --Size-4xl: 48px;
+  --Sky-Blue-100: #cfeaf6;
+  --Examples-Image-Min-Width: 500px;
+  --Examples-Image-Max-Width: 500px;
+  --Examples-Text-Min-Width: 460px;
+  --Gradient-Light-Green-to-Blue---Example-Header: linear-gradient(
+    90deg,
+    #55b95f 0%,
+    #31579c 97.75%
+  );
+  --Size-base: 16px;
+  --Gradient-Light-Green-to-Blue---Recommendations-Header: linear-gradient(
+    90deg,
+    #55b95f 0%,
+    #31579c 97.75%
+  );
+  --Size-xl: 25px;
+  --Recommendations-Buttons-Top-Padding: 0px;
+  --Recommendations-Text-Min-Width: 570px;
+  --Recommendations-Text-Max-Width: 570px;
+  --Recommendations-Button-Group-Width: 1248px;
+  --Recommendations-Buttons-Min-Width: 150px;
+  --Recommendations-Buttons-Max-Width: 320px;
+  --Footer-Margin: 192px;
+  --Footer-Contact-Width: 435px;
+  --Gradient-Light-Green-to-Blue---Footer-Email: linear-gradient(
+    90deg,
+    #55b95f 1.91%,
+    #31579c 40.64%
+  );
+  --Footer-Links-Nav-List-Min-Width: 195px;
+  --Footer-Links-Nav-List-Max-Width: 195px;
+  --Footer-Links-Projects-List-Min-Width: 358px;
+  --Footer-Links-Projects-List-Max-Width: 358px;
+  --Copyright-Margin: 16px;
+  --Copyright-Copyright-Min-Width: 460px;
+  --Copyright-Quote-Text-Max-Width: 950px;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-background: var(--Sky-Blue-50);
+  --color-foreground: var(--Lake-Blue-950);
+  --font-sans: var(--Font-Family-Font-Sans-Serif);
+  --font-serif: var(--Font-Family-Font-Serif);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:
+    var(--Font-Family-Font-Sans-Serif),
+    -apple-system,
+    Roboto,
+    Helvetica,
+    sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Utility classes for gradients */
+.gradient-header-logo {
+  background: var(--Gradient-Light-Green-to-Blue---Header-Logo);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-intro-text {
+  background: var(--Gradient-Light-Green-to-Blue---Intro-Text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-example-header {
+  background: var(--Gradient-Light-Green-to-Blue---Example-Header);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-recommendations-header {
+  background: var(--Gradient-Light-Green-to-Blue---Recommendations-Header);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-footer-email {
+  background: var(--Gradient-Light-Green-to-Blue---Footer-Email);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
