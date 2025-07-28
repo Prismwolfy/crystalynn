@@ -93,14 +93,14 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <section id="footer" className="max-w-[1440px]">
+      <section id="footer" className={`${marginDoubleClasses} ${marginVerticalClasses} ${additionalClasses}`}>
         <Footer />
       </section>
 
       {/* Copyright */}
-      <section id="copyright" className="max-w-[1440px]">
+      <footer id="copyright" className="hidden max-w-[1440px]">
         <Copyright />
-      </section>
+      </footer>
     </div>
   );
 }

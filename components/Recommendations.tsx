@@ -107,7 +107,7 @@ export default function Recommendations() {
       </div>
 
       {/* Button Group */}
-      <div className="flex flex-col smmd:flex-row w-full md:justify-center gap-2.5">
+      <div className="flex flex-col smmdd:flex-row w-full md:justify-center gap-2.5 md:gap-5">
         <button className="button button-secondary">
           More About Me
         </button>

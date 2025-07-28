@@ -10,6 +10,7 @@
   /* Breakpoints */
   --breakpoint-sm: 22.5rem; /* 360px */
   --breakpoint-smmd: 25rem; /* 400px */
+  --breakpoint-smmdd: 37.5rem; /* 600px */
   --breakpoint-xl: 90rem; /* 1440px */
 
   /* Colors */
@@ -76,46 +77,6 @@
   --text-4xl--line-height: calc(2.5 / 3);
   --text-5xl: 3.8125rem; /* 3.8125rem (61px) */
   --text-5xl--line-height: calc(4 / 3.8125);
-
-
-  --Size-2xl: 31px;
-  --Spacing-2: 8px;
-  --Spacing-4: 16px;
-  --Border-Radius-rounded-md: 6px;
-  --Size-lg: 20px;
-  --Intro-Intro-Text-Min-Width: 450px;
-  --Intro-Intro-Text-Max-Width: 710px;
-  --Size-3xl: 39px;
-  --Responsive-Gutter: 32px;
-  --Credentials-Box-Min-Width: 210px;
-  --Credentials-Box-Min-Height: 157px;
-  --Credentials-Box-Padding: 25px;
-  --Credentials-Box-Text-Min-Width: 210px;
-  --Size-4xl: 48px;
-  --Examples-Image-Min-Width: 500px;
-  --Examples-Image-Max-Width: 500px;
-  --Examples-Text-Min-Width: 460px;
-  --Size-xl: 25px;
-  --Recommendations-Buttons-Top-Padding: 0px;
-  --Recommendations-Text-Min-Width: 570px;
-  --Recommendations-Text-Max-Width: 570px;
-  --Recommendations-Button-Group-Width: 1248px;
-  --Recommendations-Buttons-Min-Width: 150px;
-  --Recommendations-Buttons-Max-Width: 320px;
-  --Footer-Margin: 192px;
-  --Footer-Contact-Width: 435px;
-  --Gradient-Light-Green-to-Blue---Footer-Email: linear-gradient(
-    90deg,
-    #55b95f 1.91%,
-    #31579c 40.64%
-  );
-  --Footer-Links-Nav-List-Min-Width: 195px;
-  --Footer-Links-Nav-List-Max-Width: 195px;
-  --Footer-Links-Projects-List-Min-Width: 358px;
-  --Footer-Links-Projects-List-Max-Width: 358px;
-  --Copyright-Margin: 16px;
-  --Copyright-Copyright-Min-Width: 460px;
-  --Copyright-Quote-Text-Max-Width: 950px;
 }
 
 @theme inline {
@@ -199,18 +160,10 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-decoration-color: var(--color-lake-blue-600);
 }
 
 .bg-gradient-green-to-blue-vertical {
   background: var(--gradient-green-to-blue-vertical);
-  -webkit-text-fill-color: transparent;
-}
-
-
-
-.gradient-footer-email {
-  background: var(--Gradient-Light-Green-to-Blue---Footer-Email);
-  background-clip: text;
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

@@ -22,15 +22,7 @@ export default function Hero() {
           Hi, I'm Crystalynn!
         </h3>
         <p className="text-body-lg lg:max-xl:text-lg">
-          <span>I'm an expert </span>
-          <span className="font-bold gradient-green-to-blue-horizontal">UX/UI designer and developer</span>
-          <span> with </span>
-          <span className="font-bold">17+ years</span>
-          <span> of experience in digital design and development. I have a passion for </span>
-          <span className="font-bold">human-centered design</span>
-          <span> and my </span>
-          <span className="font-bold">strong development background</span>
-          <span> helps me balance user needs with technical application.</span>
+          I'm an expert <span className="font-bold gradient-green-to-blue-horizontal">UX/UI designer and developer</span> with <span className="font-bold">17+ years</span> of experience in digital design and development. I have a passion for <span className="font-bold">human-centered design</span> and my <span className="font-bold">strong development background</span> helps me balance user needs with technical application.
         </p>
       </div>
 
