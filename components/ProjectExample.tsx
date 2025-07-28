@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 interface ProjectExampleProps {
+  classes: string;
   subheader: string;
   header: string;
   description: string;
@@ -11,38 +12,45 @@ interface ProjectExampleProps {
 }
 
 export default function ProjectExample({
+  classes,
   subheader,
   header,
   description,
   imageUrl,
   imagePosition,
   background = "default",
-  buttonText = "Button",
+  buttonText = "See More",
 }: ProjectExampleProps) {
-  const bgClass = background === "sky" ? "bg-[#CFEAF6]" : "";
+  
+  const bgClass = background === "sky" ? "bg-sky-blue-100" : "";
+  const exampleContainerClasses = 'flex flex-row justify-center items-center md:items-start xl:flex-row gap-4 md:gap-6 lg:gap-14 xl:gap-24 w-full flex-wrap max-w-[1440px]'
 
-  const content = (
+  const contentText = (
     <>
       {/* Text Content */}
-      <div className="flex min-w-[460px] max-w-[460px] flex-col items-start gap-[25px] flex-1">
-        <div className="flex flex-col items-start gap-2.5 w-full">
-          <div className="w-full text-[#111E36] font-sans text-xl font-normal">
+      <div className="flex xl:max-w-[460px] flex-col items-start gap-6 flex-1">
+        <div className="flex flex-col items-start gap-1.5 lg:gap-2.5 w-full">
+          <div className="w-full text-body-lg">
             {subheader}
           </div>
-          <div className="w-full font-serif text-[31px] font-normal uppercase gradient-example-header">
+          <h4 className="w-full leading-7 gradient-green-to-blue-horizontal">
             {header}
-          </div>
-          <div className="w-full text-[#111E36] font-sans text-base font-normal">
+          </h4>
+          <div className="w-full">
             {description}
           </div>
         </div>
-        <button className="flex py-2.5 px-10 flex-col items-start rounded-md bg-[#2D436C] text-[#F0FDFF] font-sans text-xl font-bold">
+        <button className="button button-primary">
           {buttonText}
         </button>
       </div>
+    </>
+  );
 
+  const contentImage = (
+    <>
       {/* Image */}
-      <div className="h-[300px] min-w-[500px] max-w-[500px] flex-1 rounded-md overflow-hidden">
+      <div className="xl:h-[300px] xl:min-w-[500px] xl:max-w-[500px] flex-1 rounded-md overflow-hidden">
         <Image
           src={imageUrl}
           alt={header}
@@ -56,62 +64,20 @@ export default function ProjectExample({
 
   return (
     <section
-      className={`flex py-14 px-48 justify-center items-start gap-24 w-full flex-wrap ${bgClass}`}
+      className={`${classes} w-full flex justify-center ${bgClass}`}
     >
       {imagePosition === "left" ? (
         <>
-          <div className="h-[300px] min-w-[500px] max-w-[500px] flex-1 rounded-md overflow-hidden">
-            <Image
-              src={imageUrl}
-              alt={header}
-              width={500}
-              height={300}
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="flex min-w-[460px] max-w-[460px] flex-col items-start gap-[25px] flex-1">
-            <div className="flex flex-col items-start gap-2.5 w-full">
-              <div className="w-full text-[#111E36] font-sans text-xl font-normal">
-                {subheader}
-              </div>
-              <div className="w-full font-serif text-[31px] font-normal uppercase gradient-example-header">
-                {header}
-              </div>
-              <div className="w-full text-[#111E36] font-sans text-base font-normal">
-                {description}
-              </div>
-            </div>
-            <button className="flex py-2.5 px-10 flex-col items-start rounded-md bg-[#2D436C] text-[#F0FDFF] font-sans text-xl font-bold">
-              {buttonText}
-            </button>
+          <div className={`${exampleContainerClasses} sm:max-md:flex-col`}>
+            {contentImage}        
+            {contentText}
           </div>
         </>
       ) : (
         <>
-          <div className="flex min-w-[460px] max-w-[460px] flex-col items-start gap-[25px] flex-1">
-            <div className="flex flex-col items-start gap-2.5 w-full">
-              <div className="w-full text-[#111E36] font-sans text-xl font-normal">
-                {subheader}
-              </div>
-              <div className="w-full font-serif text-[31px] font-normal uppercase gradient-example-header">
-                {header}
-              </div>
-              <div className="w-full text-[#111E36] font-sans text-base font-normal">
-                {description}
-              </div>
-            </div>
-            <button className="flex py-2.5 px-10 flex-col items-start rounded-md bg-[#2D436C] text-[#F0FDFF] font-sans text-xl font-bold">
-              {buttonText}
-            </button>
-          </div>
-          <div className="h-[300px] min-w-[500px] max-w-[500px] flex-1 rounded-md overflow-hidden">
-            <Image
-              src={imageUrl}
-              alt={header}
-              width={500}
-              height={300}
-              className="w-full h-full object-cover"
-            />
+          <div className={`${exampleContainerClasses} sm:max-md:flex-col-reverse`}>
+            {contentText}
+            {contentImage}
           </div>
         </>
       )}

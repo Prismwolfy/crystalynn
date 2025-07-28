@@ -2,59 +2,99 @@
 @import "tailwindcss";
 
 :root {
-  --background: var(--Sky-Blue-50);
-  --foreground: var(--Lake-Blue-950);
+  --background: var(--color-sky-blue-50);
+  --foreground: var(--color-lake-blue-950);
+}
 
-  /* Portfolio Custom Properties */
-  --Sky-Blue-50: #f0fdff;
-  --Responsive-Margin---Vertical: 56px;
-  --Responsive-Margin: 96px;
-  --Tree-Green-500: #55b95f;
-  --Font-Family-Font-Serif: Belanosima;
-  --Size-2xl: 31px;
-  --Gradient-Light-Green-to-Blue---Header-Logo: linear-gradient(
+@theme {
+  /* Breakpoints */
+  --breakpoint-sm: 22.5rem; /* 360px */
+  --breakpoint-smmd: 25rem; /* 400px */
+  --breakpoint-xl: 90rem; /* 1440px */
+
+  /* Colors */
+  --color-sky-blue-50: #f0fdff;
+  --color-sky-blue-100: #CFEAF6;
+  --color-sky-blue-200: #B6DFF4;
+  --color-sky-blue-300: #98D0EE;
+  --color-sky-blue-400: #80B5D1;
+  --color-sky-blue-500: #6A9AB4;
+  --color-sky-blue-600: #558097;
+  --color-sky-blue-700: #42667A;
+  --color-sky-blue-800: #304D5C;
+  --color-sky-blue-900: #1F343F;
+  --color-sky-blue-950: #0D1D25;
+
+  --color-lake-blue-50: #E5F3FF;
+  --color-lake-blue-100: #C3E2FF;
+  --color-lake-blue-200: #9DD0FF;
+  --color-lake-blue-300: #72A5E9;
+  --color-lake-blue-400: #5987DB;
+  --color-lake-blue-500: #416EBF;
+  --color-lake-blue-600: #31579c;
+  --color-lake-blue-700: #2E4C82;
+  --color-lake-blue-800: #2d436c;
+  --color-lake-blue-900: #13264A;
+  --color-lake-blue-950: #111e36;
+  
+  --color-tree-green-50: #DDFAE0;
+  --color-tree-green-100: #B3E9B9;
+  --color-tree-green-200: #93EC9D;
+  --color-tree-green-300: #75DA81;
+  --color-tree-green-400: #5DC367;
+  --color-tree-green-500: #55b95f;
+  --color-tree-green-600: #429C4B;
+  --color-tree-green-700: #318346;
+  --color-tree-green-800: #2C5D40;
+  --color-tree-green-900: #16441A;
+  --color-tree-green-950: #0C3110;
+
+  --gradient-green-to-blue-horizontal: linear-gradient(
     90deg,
-    #55b95f 0%,
-    #31579c 100%
+    var(--color-tree-green-500) 0%,
+    var(--color-lake-blue-600) 100%
   );
+
+  --gradient-green-to-blue-vertical: linear-gradient(
+    var(--color-tree-green-500) 0%,
+    var(--color-lake-blue-600) 100%
+  );
+  
+  /* Typography */
+  --Font-Family-Font-Serif: Belanosima;
+  --Font-Family-Font-Sans-Serif: Poppins;
+
+  --text-lg: 1.25rem; /* 1.25rem (20px) */
+  --text-lg--line-height: calc(1.75 / 1.25);
+  --text-xl: 1.5625rem; /* 1.5625rem (25px) */
+  --text-xl--line-height: calc(2 / 1.5625);
+  --text-2xl: 1.9375rem; /* 1.9375rem (31px) */
+  --text-2xl--line-height: calc(2.5 / 1.9375);
+  --text-3xl: 2.4375rem; /* 2.4375rem (39px) */
+  --text-3xl--line-height: calc(3 / 2.4375);
+  --text-4xl: 3rem; /* 3rem (48px) */
+  --text-4xl--line-height: calc(2.5 / 3);
+  --text-5xl: 3.8125rem; /* 3.8125rem (61px) */
+  --text-5xl--line-height: calc(4 / 3.8125);
+
+
+  --Size-2xl: 31px;
   --Spacing-2: 8px;
   --Spacing-4: 16px;
   --Border-Radius-rounded-md: 6px;
-  --Lake-Blue-950: #111e36;
-  --Font-Family-Font-Sans-Serif: Poppins;
   --Size-lg: 20px;
-  --Lake-Blue-800: #2d436c;
-  --Responsive-Double-Margin: 192px;
   --Intro-Intro-Text-Min-Width: 450px;
   --Intro-Intro-Text-Max-Width: 710px;
   --Size-3xl: 39px;
-  --Gradient-Light-Green-to-Blue---Intro-Text: linear-gradient(
-    90deg,
-    #55b95f 20.77%,
-    #31579c 67.31%
-  );
   --Responsive-Gutter: 32px;
   --Credentials-Box-Min-Width: 210px;
   --Credentials-Box-Min-Height: 157px;
   --Credentials-Box-Padding: 25px;
-  --Tree-Green-300: #75da81;
   --Credentials-Box-Text-Min-Width: 210px;
   --Size-4xl: 48px;
-  --Sky-Blue-100: #cfeaf6;
   --Examples-Image-Min-Width: 500px;
   --Examples-Image-Max-Width: 500px;
   --Examples-Text-Min-Width: 460px;
-  --Gradient-Light-Green-to-Blue---Example-Header: linear-gradient(
-    90deg,
-    #55b95f 0%,
-    #31579c 97.75%
-  );
-  --Size-base: 16px;
-  --Gradient-Light-Green-to-Blue---Recommendations-Header: linear-gradient(
-    90deg,
-    #55b95f 0%,
-    #31579c 97.75%
-  );
   --Size-xl: 25px;
   --Recommendations-Buttons-Top-Padding: 0px;
   --Recommendations-Text-Min-Width: 570px;
@@ -79,53 +119,94 @@
 }
 
 @theme inline {
-  --color-background: var(--Sky-Blue-50);
-  --color-foreground: var(--Lake-Blue-950);
+  --color-background: var(--color-sky-blue-50);
+  --color-foreground: var(--color-lake-blue-950);
   --font-sans: var(--Font-Family-Font-Sans-Serif);
   --font-serif: var(--Font-Family-Font-Serif);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family:
-    var(--Font-Family-Font-Sans-Serif),
-    -apple-system,
-    Roboto,
-    Helvetica,
-    sans-serif;
-  margin: 0;
-  padding: 0;
+@layer base {
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family:
+      var(--Font-Family-Font-Sans-Serif),
+      -apple-system,
+      Roboto,
+      Helvetica,
+      sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif font-normal uppercase 
+  }
+
+  h1 {
+    @apply text-4xl lg:text-5xl
+  }
+
+  h2 {
+    @apply text-3xl lg:text-4xl
+  }
+
+  h3 {
+    @apply text-2xl lg:text-3xl
+  }
+
+  h4 {
+    @apply text-xl lg:text-2xl
+  }
+
+  h5 {
+    @apply text-base lg:text-xl
+  }
+
+  h6 {
+    @apply text-base xl:text-lg
+  }
+
+  #nav-mobile a {
+    @apply block
+  }
+
+  .text-body-lg {
+    @apply text-base xl:text-lg
+  }
+
+  .button {
+    @apply text-base xl:text-lg font-bold py-2.5 px-10 rounded-md w-full md:w-auto
+  }
+
+  .button-primary {
+    @apply bg-lake-blue-800 text-sky-blue-50
+  }
+
+  .button-secondary {
+    @apply bg-tree-green-500 text-lake-blue-950
+  }
 }
 
 /* Utility classes for gradients */
-.gradient-header-logo {
-  background: var(--Gradient-Light-Green-to-Blue---Header-Logo);
+.gradient-green-to-blue-horizontal {
+  background: var(--gradient-green-to-blue-horizontal);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.gradient-intro-text {
-  background: var(--Gradient-Light-Green-to-Blue---Intro-Text);
-  background-clip: text;
-  -webkit-background-clip: text;
+.bg-gradient-green-to-blue-vertical {
+  background: var(--gradient-green-to-blue-vertical);
   -webkit-text-fill-color: transparent;
 }
 
-.gradient-example-header {
-  background: var(--Gradient-Light-Green-to-Blue---Example-Header);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
-.gradient-recommendations-header {
-  background: var(--Gradient-Light-Green-to-Blue---Recommendations-Header);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
 .gradient-footer-email {
   background: var(--Gradient-Light-Green-to-Blue---Footer-Email);
