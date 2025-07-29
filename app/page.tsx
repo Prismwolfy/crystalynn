@@ -98,7 +98,7 @@ export default function Home() {
       </section>
 
       {/* Copyright */}
-      <footer id="copyright" className="hidden max-w-[1440px]">
+      <footer id="copyright" className={`w-full bg-lake-blue-800 text-sky-blue-50 flex justify-center items-center`}>
         <Copyright />
       </footer>
     </div>

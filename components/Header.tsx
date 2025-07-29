@@ -7,17 +7,17 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   const navLinkSharedClasses = 'flex py-2 px-4 justify-center items-center rounded-md text-lg font-normal transition-colors hidden xl:block'
-  const navLinkSimpleClasses = ' hover:text-tree-green-600 focus:outline-2 focus:outline-sky-500 focus:text-lake-blue-950'
-  const navLinkLimitedClasses = ' md:max-xl:block'
-  const navLinkButtonClasses = ' ml-4 hover:bg-lake-blue-950 hover:text-white outline-2 outline-lake-blue-950'
+  const navLinkSimpleClasses = 'hover:text-tree-green-600 focus:outline-2 focus:outline-sky-500 focus:text-lake-blue-950'
+  const navLinkLimitedClasses = 'md:max-xl:block'
+  const navLinkButtonClasses = 'ml-4 hover:bg-lake-blue-950 hover:text-white outline-2 outline-lake-blue-950'
 
   const navLinks = (
     <>
-      <Link href="#recent-projects" className={navLinkSharedClasses + navLinkSimpleClasses + navLinkLimitedClasses}>Recent Projects</Link>
-      <Link href="#about" className={navLinkSharedClasses + navLinkSimpleClasses}>About</Link>
-      <Link href="#recommendations" className={navLinkSharedClasses + navLinkSimpleClasses}>Recommendations</Link>
-      <Link href="#resume" className={navLinkSharedClasses + navLinkSimpleClasses}>Resume</Link>
-      <Link href="#contact" className={navLinkSharedClasses + navLinkButtonClasses + navLinkLimitedClasses}>Contact</Link>
+      <Link href="#recent-projects" className={`${navLinkSharedClasses} ${navLinkSimpleClasses} ${navLinkLimitedClasses}`}>Recent Projects</Link>
+      <Link href="#about" className={`${navLinkSharedClasses} ${navLinkSimpleClasses}`}>About</Link>
+      <Link href="#recommendations" className={`${navLinkSharedClasses} ${navLinkSimpleClasses}`}>Recommendations</Link>
+      <Link href="#resume" className={`${navLinkSharedClasses} ${navLinkSimpleClasses}`}>Resume</Link>
+      <Link href="#contact" className={`${navLinkSharedClasses} ${navLinkButtonClasses} ${navLinkLimitedClasses}`}>Contact</Link>
     </>
   )
   return (
