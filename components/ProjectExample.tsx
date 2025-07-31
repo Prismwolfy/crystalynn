@@ -2,6 +2,7 @@ import Image from "next/image";
 
 interface ProjectExampleProps {
   classes: string;
+  id: string;
   subheader: string;
   header: string;
   description: string;
@@ -13,6 +14,7 @@ interface ProjectExampleProps {
 
 export default function ProjectExample({
   classes,
+  id,
   subheader,
   header,
   description,
@@ -63,7 +65,7 @@ export default function ProjectExample({
   );
 
   return (
-    <section
+    <section id={id}
       className={`${classes} w-full flex justify-center ${bgClass}`}
     >
       {imagePosition === "left" ? (

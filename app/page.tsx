@@ -44,6 +44,7 @@ export default function Home() {
       >
         <ProjectExample
           classes={`${marginClasses} ${marginVerticalClasses}`}
+          id="ltue"
           subheader="Life, the Universe, & Everything"
           header="Branding and Website Redesign"
           description="This is a paragraph about the client and project that expands a bit on what was done for them. Short and to the point, it should include key words but not so much that it's a chore to read. Include all the different things that was part of this project and what I learned while working on this project to entice the viewer to click the link below."
@@ -55,6 +56,7 @@ export default function Home() {
 
         <ProjectExample
           classes={`${marginClasses} ${marginVerticalClasses}`}
+          id="road-trippin"
           subheader="Road Trippin'"
           header="Mobile App Design"
           description="This is a paragraph about the client and project that expands a bit on what was done for them. Short and to the point, it should include key words but not so much that it's a chore to read. Include all the different things that was part of this project and what I learned while working on this project to entice the viewer to click the link below."
@@ -66,6 +68,7 @@ export default function Home() {
 
         <ProjectExample
           classes={`${marginClasses} ${marginVerticalClasses}`}
+          id="bookshelf"
           subheader="Bookshelf"
           header="Website Design"
           description="This is a paragraph about the client and project that expands a bit on what was done for them. Short and to the point, it should include key words but not so much that it's a chore to read. Include all the different things that was part of this project and what I learned while working on this project to entice the viewer to click the link below."
@@ -77,6 +80,7 @@ export default function Home() {
 
         <ProjectExample
           classes={`${marginClasses} ${marginVerticalClasses}`}
+          id="modere"
           subheader="Modere"
           header="Updated Design System"
           description="This is a paragraph about the client and project that expands a bit on what was done for them. Short and to the point, it should include key words but not so much that it's a chore to read. Include all the different things that was part of this project and what I learned while working on this project to entice the viewer to click the link below."

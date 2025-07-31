@@ -1,10 +1,20 @@
 "use client";
 
 import Link from "next/link";
+import {Routes} from "../components/Routes";
+
+type RoutePath = typeof Routes[keyof typeof Routes];
+
+interface FooterLinkProps {
+  id: string;
+  label: string;
+  target?: "_self" | "_blank" | "_parent" | "_top";
+  href: RoutePath;
+}
 
 interface FooterLinkListProps {
   header: string;
-  links: string[];
+  links: FooterLinkProps[];
 }
 
 function FooterLinkList({ header, links }: FooterLinkListProps) {
@@ -18,11 +28,12 @@ function FooterLinkList({ header, links }: FooterLinkListProps) {
           key={index}
           className="flex flex-col items-center w-full"
         >
-          <Link
-            href="#"
+          <Link 
+            href={link.href}
+            target={link.target || "_self"}
             className="w-full py-1 hover:underline"
           >
-            {link}
+            {link.label}
           </Link>
         </div>
       ))}
@@ -31,13 +42,19 @@ function FooterLinkList({ header, links }: FooterLinkListProps) {
 }
 
 export default function Footer() {
-  const navigationLinks = ["About", "Recommendations", "Resume", "Contact"];
-  const projectLinks = [
-    "Life, the Universe, & Everything Redesign",
-    "Road Trippin' Mobile App Design",
-    "Bookshelf Website Design",
-    "Modere Updated Design System",
+  const navigationLinks = [
+    { id: "1", label: "About", href: Routes.about },
+    { id: "2", label: "Recommendations", href: Routes.recommendations },
+    { id: "3", label: "Resume", target: "_blank" as "_blank", href: Routes.resume },
+    { id: "4", label: "Contact", href: Routes.contact },
   ];
+
+  const projectLinks = [
+  { id: "1", label: "Life, the Universe, & Everything Redesign", href: Routes.ltue },
+  { id: "2", label: "Road Trippin' Mobile App Design", href: Routes.roadTrippin },
+  { id: "3", label: "Bookshelf Website Design", href: Routes.bookshelf },
+  { id: "4", label: "Modere Updated Design System", href: Routes.modere },
+];
 
   return (
     <>
