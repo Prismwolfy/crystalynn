@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 
+import Link from "next/link";
+
 interface RecommendationProps {
   quote: ReactNode;
   author: string;
@@ -108,12 +110,9 @@ export default function Recommendations() {
 
       {/* Button Group */}
       <div className="flex flex-col smmdd:flex-row w-full md:justify-center gap-2.5 md:gap-5">
-        <button className="button button-secondary">
-          More About Me
-        </button>
-        <button className="button button-primary">
-          Get in Touch
-        </button>
+        {/* TODO: Add button back when About page is built */}
+        <Link href="#" className="hidden button button-secondary">More About Me</Link>
+        <Link href="mailto:prismwolf@gmail.com" className="button button-primary">Get in Touch</Link>
       </div>
     </div>
   );

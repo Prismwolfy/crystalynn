@@ -16,8 +16,8 @@ export default function Header() {
       <Link href="#recent-projects" className={`${navLinkSharedClasses} ${navLinkSimpleClasses} ${navLinkLimitedClasses}`}>Recent Projects</Link>
       <Link href="#about" className={`${navLinkSharedClasses} ${navLinkSimpleClasses}`}>About</Link>
       <Link href="#recommendations" className={`${navLinkSharedClasses} ${navLinkSimpleClasses}`}>Recommendations</Link>
-      <Link href="#resume" className={`${navLinkSharedClasses} ${navLinkSimpleClasses}`}>Resume</Link>
-      <Link href="#contact" className={`${navLinkSharedClasses} ${navLinkButtonClasses} ${navLinkLimitedClasses}`}>Contact</Link>
+      <Link href="/docs/Resume - Crystalynn Meyer - UX and UI Designer.pdf" className={`${navLinkSharedClasses} ${navLinkSimpleClasses}`} target="_blank">Resume</Link>
+      <Link href="mailto:prismwolf@gmail.com" className={`${navLinkSharedClasses} ${navLinkButtonClasses} ${navLinkLimitedClasses}`}>Contact</Link>
     </>
   )
   return (
