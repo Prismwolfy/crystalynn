@@ -10,4 +10,6 @@ export const Routes = {
     roadTrippin: "#road-trippin",
     bookshelf: "#bookshelf",
     modere: "modere",
+    
+    linkedIn: "https://www.linkedin.com/in/crystalynn-meyer/",
 };
