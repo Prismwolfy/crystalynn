@@ -15,7 +15,8 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center w-full mx-auto">
-      <div className="fixed top-0 left-0 bg-white border-1 border-t-0 border-l-0 border-lake-blue-950 p-2 z-2000">
+      {/* TODO: Remove when dark mode is complete and this is no longer needed */}
+      <div className="hidden fixed top-0 left-0 bg-white border-1 border-t-0 border-l-0 border-lake-blue-950 p-2 z-2000">
         <span className="md:hidden">Mobile</span>
         <span className="hidden md:max-lg:block">Tablet</span>
         <span className="hidden lg:max-xl:block">Desktop Small</span>

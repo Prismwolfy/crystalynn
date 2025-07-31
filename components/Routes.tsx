@@ -1,6 +1,6 @@
 export const Routes = { 
     home: "/", 
-    recentProejcts: "#recent-projects",
+    recentProjects: "#recent-projects",
     about: "#about",
     recommendations: "#recommendations", 
     resume: "/docs/Resume - Crystalynn Meyer - UX and UI Designer.pdf",
