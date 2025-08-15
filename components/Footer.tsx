@@ -53,7 +53,8 @@ export default function Footer() {
   { id: "1", label: "Life, the Universe, & Everything Redesign", href: Routes.ltue },
   { id: "2", label: "Road Trippin' Mobile App Design", href: Routes.roadTrippin },
   { id: "3", label: "Bookshelf Website Design", href: Routes.bookshelf },
-  { id: "4", label: "Modere Updated Design System", href: Routes.modere },
+  /*{ TODO: Unhide Modere when content is ready - don't forget homepage example }*/
+  /*{ id: "4", label: "Modere Updated Design System", href: Routes.modere },*/
 ];
 
   return (

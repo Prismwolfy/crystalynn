@@ -10,6 +10,7 @@ interface ProjectExampleProps {
   imagePosition: "left" | "right";
   background?: "default" | "sky";
   buttonText?: string;
+  buttonUrl: string;
 }
 
 export default function ProjectExample({
@@ -22,6 +23,7 @@ export default function ProjectExample({
   imagePosition,
   background = "default",
   buttonText = "See More",
+  buttonUrl,
 }: ProjectExampleProps) {
   
   const bgClass = background === "sky" ? "bg-sky-blue-100" : "";
@@ -42,9 +44,14 @@ export default function ProjectExample({
             {description}
           </div>
         </div>
-        <button className="button button-primary">
+        <a 
+          href={buttonUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="button button-primary"
+        >
           {buttonText}
-        </button>
+        </a>
       </div>
     </>
   );
