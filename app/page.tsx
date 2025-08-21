@@ -11,6 +11,7 @@ export default function Home() {
   const marginClasses = 'px-4 md:px-6 lg:px-14 xl:px-24'
   const marginDoubleClasses = 'px-4 md:px-6 lg:px-28 xl:px-48'
   const marginVerticalClasses = 'py-6 md:py-8 lg:py-12 xl:py-14'
+  const marginVerticalHeaderClasses = 'py-4 lg:py-6 xl:py-8'
   const additionalClasses = 'w-full max-w-[1440px]'
 
   return (
@@ -24,12 +25,12 @@ export default function Home() {
       </div>
 
       {/* Header */}
-      <div id="header" className={`${marginClasses} ${marginVerticalClasses} ${additionalClasses}`}>
+      <header id="header" className={`${marginClasses} ${marginVerticalHeaderClasses} ${additionalClasses}`}>
         <Header />
-      </div>
+      </header>
 
       {/* Hero/Intro Section */}
-      <section id="intro" className={`${marginDoubleClasses} ${additionalClasses}`}>
+      <section id="intro" className={`${marginDoubleClasses} ${marginVerticalClasses} ${additionalClasses}`}>
         <Hero />
       </section>
 
