@@ -6,27 +6,28 @@ export default function Copyright() {
   return (
     <>
       {/* Copyright */}
-      <div className="max-w-[1440px] flex py-2.5 px-4 justify-center lg:justify-between items-start w-full md:max-lg:text-center lg:gap-14 lg:flex-row flex-wrap lg:flex-nowrap lg:items-center">
+      <div className="flex w-full max-w-[1440px] flex-wrap items-start justify-center px-4 py-2.5 md:max-lg:text-center lg:flex-row lg:flex-nowrap lg:items-center lg:justify-between lg:gap-14">
         {/* Left - Copyright */}
-        <div className="flex items-center gap-1.75 flex-1 md:flex-none">
+        <div className="gap-1.75 flex flex-1 items-center md:flex-none">
           <span className="text-xl">©</span>
           <span>{currentYear}</span>
           <span>Crystalynn Meyer</span>
         </div>
 
         {/* Right */}
-        <div className="flex justify-end items-end gap-5 flex-wrap flex-row">
-          <div className="flex py-2 justify-end items-center flex-wrap flex-1">
-            "Often when you think you're at the end of something, you're at the beginning of something else." - Fred Rogers
+        <div className="flex flex-row flex-wrap items-end justify-end gap-5">
+          <div className="flex flex-1 flex-wrap items-center justify-end py-2">
+            "Often when you think you're at the end of something, you're at the
+            beginning of something else." - Fred Rogers
           </div>
 
           {/* Return to Top */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="flex justify-end items-end"
+            className="flex items-end justify-end"
             aria-label="Return to top"
           >
-            <div className="flex justify-center items-center w-10 h-10 rounded-full bg-tree-green-500 hover:bg-tree-green-600 transition-all delay-100 hover:cursor-pointer">
+            <div className="bg-tree-green-500 hover:bg-tree-green-600 flex h-10 w-10 items-center justify-center rounded-full transition-all delay-100 hover:cursor-pointer">
               <svg
                 width="40"
                 height="40"

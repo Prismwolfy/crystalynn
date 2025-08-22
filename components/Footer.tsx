@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import {Routes} from "../components/Routes";
+import { Routes } from "../components/Routes";
 
-type RoutePath = typeof Routes[keyof typeof Routes];
+type RoutePath = (typeof Routes)[keyof typeof Routes];
 
 interface FooterLinkProps {
   id: string;
@@ -19,16 +19,11 @@ interface FooterLinkListProps {
 
 function FooterLinkList({ header, links }: FooterLinkListProps) {
   return (
-    <div className="flex flex-col flex-1 smmdd:flex-none w-full smmdd:w-auto items-start">
-      <h5 className="flex py-1">
-        {header}
-      </h5>
+    <div className="smmdd:flex-none smmdd:w-auto flex w-full flex-1 flex-col items-start">
+      <h5 className="flex py-1">{header}</h5>
       {links.map((link, index) => (
-        <div
-          key={index}
-          className="flex flex-col items-center w-full"
-        >
-          <Link 
+        <div key={index} className="flex w-full flex-col items-center">
+          <Link
             href={link.href}
             target={link.target || "_self"}
             className="w-full py-1 hover:underline"
@@ -45,38 +40,54 @@ export default function Footer() {
   const navigationLinks = [
     { id: "1", label: "About", href: Routes.about },
     { id: "2", label: "Recommendations", href: Routes.recommendations },
-    { id: "3", label: "Resume", target: "_blank" as "_blank", href: Routes.resume },
+    {
+      id: "3",
+      label: "Resume",
+      target: "_blank" as "_blank",
+      href: Routes.resume,
+    },
     { id: "4", label: "Contact", href: Routes.contact },
   ];
 
   const projectLinks = [
-  { id: "1", label: "Life, the Universe, & Everything Redesign", href: Routes.ltue },
-  { id: "2", label: "Road Trippin' Mobile App Design", href: Routes.roadTrippin },
-  { id: "3", label: "Bookshelf Website Design", href: Routes.bookshelf },
-  /*{ TODO: Unhide Modere when content is ready - don't forget homepage example }*/
-  /*{ id: "4", label: "Modere Updated Design System", href: Routes.modere },*/
-];
+    {
+      id: "1",
+      label: "Life, the Universe, & Everything Redesign",
+      href: Routes.ltue,
+    },
+    {
+      id: "2",
+      label: "Road Trippin' Mobile App Design",
+      href: Routes.roadTrippin,
+    },
+    { id: "3", label: "Bookshelf Website Design", href: Routes.bookshelf },
+    /*{ TODO: Unhide Modere when content is ready - don't forget homepage example }*/
+    /*{ id: "4", label: "Modere Updated Design System", href: Routes.modere },*/
+  ];
 
   return (
     <>
       {/* Main Footer */}
-      <div className="flex md:flex-row items-start gap-6 lg:gap-8 w-full flex-wrap justify-center md:justify-start lg:justify-between">
+      <div className="flex w-full flex-wrap items-start justify-center gap-6 md:flex-row md:justify-start lg:justify-between lg:gap-8">
         {/* Left Section */}
         <div className="flex flex-col items-start gap-2.5 md:flex-1 lg:max-w-[435px]">
-          <h4>
-            Get in Touch
-          </h4>
+          <h4>Get in Touch</h4>
           <div className="w-full">
-            Ready to build something together? Contact me via my LinkedIn account below or you can email me directly at: <Link href={Routes.contact} className="font-bold underline gradient-green-to-blue-horizontal">prismwolf@gmail.com</Link>.
+            Ready to build something together? Contact me via my LinkedIn
+            account below or you can email me directly at:{" "}
+            <Link
+              href={Routes.contact}
+              className="gradient-green-to-blue-horizontal font-bold underline"
+            >
+              prismwolf@gmail.com
+            </Link>
+            .
           </div>
 
           {/* Social Media */}
           <div className="flex items-center gap-2.5">
-            <Link 
-              href={Routes.linkedIn}
-              target="_blank"
-            >
-              <div className="flex justify-center items-center w-10 h-10 rounded-full bg-tree-green-500">
+            <Link href={Routes.linkedIn} target="_blank">
+              <div className="bg-tree-green-500 flex h-10 w-10 items-center justify-center rounded-full">
                 <svg
                   width="40"
                   height="40"
@@ -99,12 +110,12 @@ export default function Footer() {
                   />
                 </svg>
               </div>
-            </ Link>
+            </Link>
           </div>
         </div>
 
         {/* Right Section */}
-        <div className="flex flex-wrap flex-col smmdd:flex-row md:flex-col lg:flex-row items-start gap-3 smmdd:gap-14 md:gap-3 md:flex-none lg:gap-12">
+        <div className="smmdd:flex-row smmdd:gap-14 flex flex-col flex-wrap items-start gap-3 md:flex-none md:flex-col md:gap-3 lg:flex-row lg:gap-12">
           <FooterLinkList header="Navigation" links={navigationLinks} />
           <FooterLinkList header="Recent Projects" links={projectLinks} />
         </div>

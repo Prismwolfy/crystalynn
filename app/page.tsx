@@ -7,17 +7,16 @@ import Footer from "../components/Footer";
 import Copyright from "../components/Copyright";
 
 export default function Home() {
-
-  const marginClasses = 'px-4 md:px-6 lg:px-14 xl:px-24'
-  const marginDoubleClasses = 'px-4 md:px-6 lg:px-28 xl:px-48'
-  const marginVerticalClasses = 'py-6 md:py-8 lg:py-12 xl:py-14'
-  const marginVerticalHeaderClasses = 'py-4 lg:py-6 xl:py-8'
-  const additionalClasses = 'w-full max-w-[1440px]'
+  const marginClasses = "px-4 md:px-6 lg:px-14 xl:px-24";
+  const marginDoubleClasses = "px-4 md:px-6 lg:px-28 xl:px-48";
+  const marginVerticalClasses = "py-6 md:py-8 lg:py-12 xl:py-14";
+  const marginVerticalHeaderClasses = "py-4 lg:py-6 xl:py-8";
+  const additionalClasses = "w-full max-w-[1440px]";
 
   return (
-    <div className="flex flex-col items-center w-full mx-auto">
+    <div className="mx-auto flex w-full flex-col items-center">
       {/* TODO: Remove when dark mode is complete and this is no longer needed */}
-      <div className="hidden fixed top-0 left-0 bg-white border-1 border-t-0 border-l-0 border-lake-blue-950 p-2 z-2000">
+      <div className="border-1 border-lake-blue-950 z-2000 fixed left-0 top-0 hidden border-l-0 border-t-0 bg-white p-2">
         <span className="md:hidden">Mobile</span>
         <span className="hidden md:max-lg:block">Tablet</span>
         <span className="hidden lg:max-xl:block">Desktop Small</span>
@@ -25,24 +24,33 @@ export default function Home() {
       </div>
 
       {/* Header */}
-      <header id="header" className={`${marginClasses} ${marginVerticalHeaderClasses} ${additionalClasses}`}>
+      <header
+        id="header"
+        className={`${marginClasses} ${marginVerticalHeaderClasses} ${additionalClasses}`}
+      >
         <Header />
       </header>
 
       {/* Hero/Intro Section */}
-      <section id="intro" className={`${marginDoubleClasses} ${marginVerticalClasses} ${additionalClasses}`}>
+      <section
+        id="intro"
+        className={`${marginDoubleClasses} ${marginVerticalClasses} ${additionalClasses}`}
+      >
         <Hero />
       </section>
 
       {/* Credentials Section */}
-      <section id="credentials" className={`${marginClasses} ${marginVerticalClasses} ${additionalClasses}`}>
+      <section
+        id="credentials"
+        className={`${marginClasses} ${marginVerticalClasses} ${additionalClasses}`}
+      >
         <Credentials />
       </section>
 
       {/* Examples/Projects Section */}
       <section
-        id="recent-projects" 
-        className={`w-full flex flex-col items-center`}
+        id="recent-projects"
+        className={`flex w-full flex-col items-center`}
       >
         <ProjectExample
           classes={`${marginClasses} ${marginVerticalClasses}`}
@@ -98,17 +106,26 @@ export default function Home() {
       </section>
 
       {/* Recommendations Section */}
-      <section id="recommendations" className={`${marginClasses} ${marginVerticalClasses} w-full flex justify-center bg-sky-blue-100`}>
+      <section
+        id="recommendations"
+        className={`${marginClasses} ${marginVerticalClasses} bg-sky-blue-100 flex w-full justify-center`}
+      >
         <Recommendations />
       </section>
 
       {/* Footer */}
-      <section id="footer" className={`${marginDoubleClasses} ${marginVerticalClasses} ${additionalClasses}`}>
+      <section
+        id="footer"
+        className={`${marginDoubleClasses} ${marginVerticalClasses} ${additionalClasses}`}
+      >
         <Footer />
       </section>
 
       {/* Copyright */}
-      <footer id="copyright" className={`w-full bg-lake-blue-800 text-sky-blue-50 flex justify-center items-center`}>
+      <footer
+        id="copyright"
+        className={`bg-lake-blue-800 text-sky-blue-50 flex w-full items-center justify-center`}
+      >
         <Copyright />
       </footer>
     </div>

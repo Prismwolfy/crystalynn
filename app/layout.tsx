@@ -7,11 +7,11 @@ export const metadata: Metadata = {
     "Expert UX/UI designer and developer with 17+ years of experience in digital design and development. Passionate about human-centered design with a strong development background.",
   icons: {
     icon: [
-      { url: '/favicon.ico' }, // Path to your favicon.ico
-      { url: '/icon.png', type: 'image/png' }, // Path to a PNG icon
+      { url: "/favicon.ico" }, // Path to your favicon.ico
+      { url: "/icon.png", type: "image/png" }, // Path to a PNG icon
     ],
     apple: [
-      { url: '/apple-icon.png' }, // Path to an Apple Touch icon
+      { url: "/apple-icon.png" }, // Path to an Apple Touch icon
     ],
   },
 };

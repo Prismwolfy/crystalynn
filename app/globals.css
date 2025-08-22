@@ -16,41 +16,41 @@
 
   /* Colors */
   --color-sky-blue-50: #f0fdff;
-  --color-sky-blue-100: #CFEAF6;
-  --color-sky-blue-200: #B6DFF4;
-  --color-sky-blue-300: #98D0EE;
-  --color-sky-blue-400: #80B5D1;
-  --color-sky-blue-500: #6A9AB4;
+  --color-sky-blue-100: #cfeaf6;
+  --color-sky-blue-200: #b6dff4;
+  --color-sky-blue-300: #98d0ee;
+  --color-sky-blue-400: #80b5d1;
+  --color-sky-blue-500: #6a9ab4;
   --color-sky-blue-600: #558097;
-  --color-sky-blue-700: #42667A;
-  --color-sky-blue-800: #304D5C;
-  --color-sky-blue-900: #1F343F;
-  --color-sky-blue-950: #0D1D25;
+  --color-sky-blue-700: #42667a;
+  --color-sky-blue-800: #304d5c;
+  --color-sky-blue-900: #1f343f;
+  --color-sky-blue-950: #0d1d25;
 
-  --color-lake-blue-50: #E5F3FF;
-  --color-lake-blue-100: #C3E2FF;
-  --color-lake-blue-200: #9DD0FF;
-  --color-lake-blue-300: #72A5E9;
-  --color-lake-blue-400: #5987DB;
-  --color-lake-blue-500: #416EBF;
+  --color-lake-blue-50: #e5f3ff;
+  --color-lake-blue-100: #c3e2ff;
+  --color-lake-blue-200: #9dd0ff;
+  --color-lake-blue-300: #72a5e9;
+  --color-lake-blue-400: #5987db;
+  --color-lake-blue-500: #416ebf;
   --color-lake-blue-600: #31579c;
-  --color-lake-blue-700: #2E4C82;
+  --color-lake-blue-700: #2e4c82;
   --color-lake-blue-800: #2d436c;
-  --color-lake-blue-900: #13264A;
+  --color-lake-blue-900: #13264a;
   --color-lake-blue-950: #111e36;
-  
-  --color-tree-green-50: #DDFAE0;
-  --color-tree-green-100: #B3E9B9;
-  --color-tree-green-200: #93EC9D;
-  --color-tree-green-300: #75DA81;
-  --color-tree-green-400: #5DC367;
+
+  --color-tree-green-50: #ddfae0;
+  --color-tree-green-100: #b3e9b9;
+  --color-tree-green-200: #93ec9d;
+  --color-tree-green-300: #75da81;
+  --color-tree-green-400: #5dc367;
   --color-tree-green-500: #55b95f;
-  --color-tree-green-600: #429C4B;
+  --color-tree-green-600: #429c4b;
   --color-tree-green-700: #318346;
-  --color-tree-green-800: #2C5D40;
-  --color-tree-green-900: #16441A;
-  --color-tree-green-950: #0C3110;
-  
+  --color-tree-green-800: #2c5d40;
+  --color-tree-green-900: #16441a;
+  --color-tree-green-950: #0c3110;
+
   /* Gradients */
   --gradient-green-to-blue-horizontal: linear-gradient(
     90deg,
@@ -61,7 +61,7 @@
     var(--color-tree-green-500) 0%,
     var(--color-lake-blue-600) 100%
   );
-  
+
   /* Typography */
   --Font-Family-Font-Serif: Belanosima;
   --Font-Family-Font-Sans-Serif: Poppins;
@@ -78,11 +78,17 @@
   --text-4xl--line-height: calc(2.5 / 3);
   --text-5xl: 3.8125rem; /* 3.8125rem (61px) */
   --text-5xl--line-height: calc(4 / 3.8125);
-  
+
   /* Height */
-  --height-header: calc(theme('spacing.4') + theme('spacing.12') + theme('spacing.4')); /* 16px + 48px + 16px = 80px / py + h + py */
-  --height-header-md: calc(theme('spacing.4') + theme('spacing.16') + theme('spacing.4')); /* 16px + 64px + 16px = 96px / py + h + py */
-  --height-header-lg: calc(theme('spacing.6') + theme('spacing.16') + theme('spacing.6')); /* 24px + 64px + 24px = 112px / py + h + py */
+  --height-header: calc(
+    theme("spacing.4") + theme("spacing.12") + theme("spacing.4")
+  ); /* 16px + 48px + 16px = 80px / py + h + py */
+  --height-header-md: calc(
+    theme("spacing.4") + theme("spacing.16") + theme("spacing.4")
+  ); /* 16px + 64px + 16px = 96px / py + h + py */
+  --height-header-lg: calc(
+    theme("spacing.6") + theme("spacing.16") + theme("spacing.6")
+  ); /* 24px + 64px + 24px = 112px / py + h + py */
 
   /* Animation */
   --animate-fade-in-scale: fade-in-scale 0.3s ease-out;
@@ -138,42 +144,42 @@
   h4,
   h5,
   h6 {
-    @apply font-serif font-normal uppercase 
+    @apply font-serif font-normal uppercase;
   }
 
   h1 {
-    @apply text-4xl lg:text-5xl
+    @apply text-4xl lg:text-5xl;
   }
 
   h2 {
-    @apply text-3xl lg:text-4xl
+    @apply text-3xl lg:text-4xl;
   }
 
   h3 {
-    @apply text-2xl lg:text-3xl
+    @apply text-2xl lg:text-3xl;
   }
 
   h4 {
-    @apply text-xl lg:text-2xl
+    @apply text-xl lg:text-2xl;
   }
 
   h5 {
-    @apply text-lg lg:text-xl
+    @apply text-lg lg:text-xl;
   }
 
   h6 {
-    @apply text-base xl:text-lg
+    @apply text-base xl:text-lg;
   }
 }
 
 @layer components {
   .top-header-offset {
     top: calc(var(--height-header));
-    
+
     @variant md {
       top: calc(var(--height-header-md));
     }
-    
+
     @variant lg {
       top: calc(var(--height-header-lg));
     }
@@ -181,66 +187,58 @@
 
   .height-viewport-header-offset {
     height: calc(100vh - var(--height-header));
-    
+
     @variant md {
       height: calc(100vh - var(--height-header-md));
     }
-    
+
     @variant lg {
       height: calc(100vh - var(--height-header-lg));
     }
   }
 
   #nav-mobile nav a {
-    @apply !block hover:!text-white hover:!opacity-80
+    @apply !block hover:!text-white hover:!opacity-80;
   }
 
-  .nav-toggle-btn &>div {
+  .nav-toggle-btn & > div {
     top: calc(var(--height-header));
-    
+
     @variant md {
       top: calc(var(--height-header-md));
     }
-    
+
     @variant lg {
       top: calc(var(--height-header-lg));
     }
   }
 
   .nav-toggle-btn {
-    @apply 
-    [&>div]:bg-lake-blue-950 [&>div]:w-7 [&>div]:h-1 [&>div]:rounded [&>div]:absolute [&>div]:transition-all [&>div]:duration-500
-    [&>div::before]:content-[''] [&>div::before]:bg-lake-blue-950 [&>div::before]:w-7 [&>div::before]:h-1 [&>div::before]:rounded [&>div::before]:absolute [&>div::before]:transition-all [&>div::before]:duration-500 [&>div::before]:-translate-x-3.5 
-    [&>div::after]:content-[''] [&>div::after]:bg-lake-blue-950 [&>div::after]:w-7 [&>div::after]:h-1 [&>div::after]:rounded [&>div::after]:absolute [&>div::after]:transition-all [&>div::after]:duration-500 [&>div::after]:-translate-x-3.5
+    @apply [&>div]:bg-lake-blue-950 [&>div::before]:bg-lake-blue-950 [&>div::after]:bg-lake-blue-950 [&>div::after]:absolute [&>div::after]:h-1 [&>div::after]:w-7 [&>div::after]:-translate-x-3.5 [&>div::after]:rounded [&>div::after]:transition-all [&>div::after]:duration-500 [&>div::after]:content-[''] [&>div::before]:absolute [&>div::before]:h-1 [&>div::before]:w-7 [&>div::before]:-translate-x-3.5 [&>div::before]:rounded [&>div::before]:transition-all [&>div::before]:duration-500 [&>div::before]:content-[''] [&>div]:absolute [&>div]:h-1 [&>div]:w-7 [&>div]:rounded [&>div]:transition-all [&>div]:duration-500;
   }
 
   .nav-toggle-btn-ham {
-    @apply   
-    [&>div::before]:-translate-y-2
-    [&>div::after]:translate-y-2
+    @apply [&>div::after]:translate-y-2 [&>div::before]:-translate-y-2;
   }
 
   .nav-toggle-btn-close {
-    @apply 
-    [&>div::before]:translate-y-0 [&>div::before]:rotate-45 
-    [&>div]:bg-transparent [&>div]:rotate-[720deg]
-    [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 
+    @apply [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div::before]:translate-y-0 [&>div::before]:rotate-45 [&>div]:rotate-[720deg] [&>div]:bg-transparent;
   }
 
   .text-body-lg {
-    @apply text-base xl:text-lg
+    @apply text-base xl:text-lg;
   }
 
   .button {
-    @apply text-base xl:text-lg font-bold py-2.5 px-10 rounded-md w-full md:w-auto
+    @apply w-full rounded-md px-10 py-2.5 text-base font-bold md:w-auto xl:text-lg;
   }
 
   .button-primary {
-    @apply bg-lake-blue-800 text-sky-blue-50
+    @apply bg-lake-blue-800 text-sky-blue-50;
   }
 
   .button-secondary {
-    @apply bg-tree-green-500 text-lake-blue-950
+    @apply bg-tree-green-500 text-lake-blue-950;
   }
 }
 
