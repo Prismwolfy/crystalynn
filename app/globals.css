@@ -265,7 +265,7 @@
   }
 
   .button {
-    @apply w-full rounded-md px-10 py-2.5 text-base font-bold md:w-auto xl:text-lg;
+    @apply w-full rounded-md px-10 py-2.5 !text-center text-base font-bold md:w-auto xl:text-lg;
   }
 
   .button-primary {

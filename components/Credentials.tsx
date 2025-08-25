@@ -5,7 +5,7 @@ interface CredentialBoxProps {
 
 function CredentialBox({ number, text }: CredentialBoxProps) {
   return (
-    <div className="smmd:w-[400px] lg:min-w-auto bg-tree-green-300 text-lake-blue-950 w-full flex-1 items-center justify-center rounded-md p-2.5 md:flex md:min-w-[340px] md:p-6 lg:min-h-[140px]">
+    <div className="smmd:w-[368px] lg:min-w-auto bg-tree-green-300 text-lake-blue-950 w-full flex-1 items-center justify-center rounded-md p-2.5 md:flex md:min-w-[340px] md:p-6 lg:min-h-[140px]">
       <h6 className="smmd:justify-center flex items-center gap-2.5 leading-5 md:flex-col">
         <span className="smmd:text-right w-[75px] text-center text-3xl lg:text-4xl">
           {number}
