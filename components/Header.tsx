@@ -116,13 +116,13 @@ export default function Header() {
         {/* Logo */}
         <div className="flex flex-1 items-center">
           <Link key="1" href={Routes.home}>
-            <div className="smmd:gap-5 lgxl:gap-5 flex items-center lg:gap-3">
+            <div className="smmd:gap-5 lgxl:gap-5 flex items-center gap-3 lg:gap-3">
               <div className="bg-tree-green-500 lgxl:h-20 lgxl:w-20 flex h-12 w-12 flex-col items-center justify-center rounded-[40px] p-0.5 px-5 md:h-16 md:w-16">
                 {/* Logo Extra Small SVG */}
                 <LogoIcon
                   width={25}
                   height={16}
-                  viewBox={"0 0 45 28"}
+                  viewBox={"0 0 51 28"}
                   logoAdditionalClasses={"md:hidden"}
                 />
                 {/* Logo Small SVG */}
