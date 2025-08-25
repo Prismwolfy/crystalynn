@@ -13,6 +13,7 @@ interface NavLinkProps {
   target?: "_self" | "_blank" | "_parent" | "_top";
   href: RoutePath;
   classes?: string;
+  sublinks?: NavLinkProps[];
 }
 
 interface NavLinkListProps {
@@ -38,7 +39,7 @@ function NavLinksList({ links, onNavLinkClick }: NavLinkListProps) {
   }, []);
 
   const handleClick = () => {
-    if (windowWidth < 1440 && onNavLinkClick) {
+    if (windowWidth < 1280 && onNavLinkClick) {
       onNavLinkClick();
     }
   };
@@ -46,15 +47,32 @@ function NavLinksList({ links, onNavLinkClick }: NavLinkListProps) {
   return (
     <>
       {links.map((link, index) => (
-        <Link
-          key={index}
-          href={link.href}
-          target={link.target || "_self"}
-          className={link.classes}
-          onClick={handleClick}
-        >
-          {link.label}
-        </Link>
+        <React.Fragment key={index}>
+          <Link
+            href={link.href}
+            target={link.target || "_self"}
+            className={link.classes}
+            onClick={handleClick}
+          >
+            {link.label}
+          </Link>
+          {/* Render sublinks if present and in mobile view */}
+          {link.sublinks && windowWidth < 1280 && (
+            <div>
+              {link.sublinks.map((sublink, subIndex) => (
+                <Link
+                  key={sublink.id}
+                  href={sublink.href}
+                  target={sublink.target || "_self"}
+                  className={sublink.classes}
+                  onClick={handleClick}
+                >
+                  {sublink.label}
+                </Link>
+              ))}
+            </div>
+          )}
+        </React.Fragment>
       ))}
     </>
   );
@@ -71,35 +89,56 @@ export default function Header() {
     "md:max-lg:block md:max-lgxl:drop-shadow-text-glow nav-limited";
   const navLinkButtonClasses =
     "ml-4 lg:ml-2 lgxl:ml-4 hover:bg-lake-blue-950 hover:text-white outline-2 outline-lake-blue-950";
+  const navSubLinkClasses = "pl-8 py-2 block text-base !hidden";
 
   const navLinks = [
     {
       id: "2",
       label: "Recent Projects",
       href: Routes.recentProjects,
-      classes: `${navLinkSharedClasses} ${navLinkSimpleClasses} ${navLinkLimitedClasses}`,
+      classes: `${navLinkSharedClasses} ${navLinkSimpleClasses} ${navLinkLimitedClasses} projects-desktop`,
     },
     {
       id: "3",
+      label: "Recent Projects More",
+      href: "#",
+      classes: `${navLinkSharedClasses} ${navLinkSimpleClasses} projects-mobile !hidden`,
+      sublinks: [
+        {
+          id: "3-1",
+          label: "Project A",
+          href: "/projects/a" as RoutePath,
+          classes: `${navSubLinkClasses}`,
+        },
+        {
+          id: "3-2",
+          label: "Project B",
+          href: "/projects/b" as RoutePath,
+          classes: `${navSubLinkClasses}`,
+        },
+      ],
+    },
+    {
+      id: "4",
       label: "About",
       href: Routes.about,
       classes: `${navLinkSharedClasses} ${navLinkSimpleClasses}`,
     },
     {
-      id: "4",
+      id: "5",
       label: "Recommendations",
       href: Routes.recommendations,
       classes: `${navLinkSharedClasses} ${navLinkSimpleClasses}`,
     },
     {
-      id: "5",
+      id: "6",
       label: "Resume",
       target: "_blank" as "_blank",
       href: Routes.resume,
       classes: `${navLinkSharedClasses} ${navLinkSimpleClasses}`,
     },
     {
-      id: "6",
+      id: "7",
       label: "Contact",
       href: Routes.contact,
       classes: `${navLinkSharedClasses} ${navLinkButtonClasses} ${navLinkLimitedClasses}`,

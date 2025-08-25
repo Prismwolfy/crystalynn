@@ -232,6 +232,15 @@
     @apply md:max-xl:!hidden;
   }
 
+  #nav-mobile nav a.projects-desktop {
+    @apply !hidden;
+  }
+
+  #nav-mobile nav a.projects-mobile,
+  #nav-mobile nav a.projects-mobile + div > a {
+    @apply md:!hidden;
+  }
+
   .nav-toggle-btn & > div {
     top: calc(var(--height-header));
 
