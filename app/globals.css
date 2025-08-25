@@ -12,6 +12,7 @@
   --breakpoint-sm: 22.5rem; /* 360px */
   --breakpoint-smmd: 25rem; /* 400px */
   --breakpoint-smmdd: 37.5rem; /* 600px */
+  --breakpoint-lgxl: 80rem; /* 1280px */
   --breakpoint-xl: 90rem; /* 1440px */
 
   /* Colors */
@@ -62,6 +63,9 @@
     var(--color-lake-blue-600) 100%
   );
 
+  /* Shadows */
+  --drop-shadow-text-glow: 0 0 5px rgba(240, 253, 255, 1);
+
   /* Typography */
   --Font-Family-Font-Serif: Belanosima;
   --Font-Family-Font-Sans-Serif: Poppins;
@@ -89,6 +93,9 @@
   --height-header-lg: calc(
     theme("spacing.6") + theme("spacing.16") + theme("spacing.6")
   ); /* 24px + 64px + 24px = 112px / py + h + py */
+  --height-header-xl: calc(
+    theme("spacing.6") + theme("spacing.20") + theme("spacing.6")
+  ); /* 24px + 80px + 24px = 128px / py + h + py */
 
   /* Animation */
   --animate-fade-in-scale: fade-in-scale 0.3s ease-out;
@@ -174,14 +181,14 @@
 
 @layer components {
   .top-header-offset {
-    top: calc(var(--height-header));
+    top: var(--height-header);
 
     @variant md {
-      top: calc(var(--height-header-md));
+      top: var(--height-header-md);
     }
 
     @variant lg {
-      top: calc(var(--height-header-lg));
+      top: var(--height-header-lg);
     }
   }
 
@@ -195,10 +202,34 @@
     @variant lg {
       height: calc(100vh - var(--height-header-lg));
     }
+
+    @variant xl {
+      height: calc(100vh - var(--height-header-xl));
+    }
+  }
+
+  .margin-top-header-offset {
+    margin-top: var(--height-header);
+
+    @variant md {
+      margin-top: var(--height-header-md);
+    }
+
+    @variant lg {
+      margin-top: var(--height-header-lg);
+    }
+
+    @variant xl {
+      margin-top: var(--height-header-xl);
+    }
   }
 
   #nav-mobile nav a {
-    @apply !block hover:!text-white hover:!opacity-80;
+    @apply !block !drop-shadow-none hover:!text-white hover:!opacity-80;
+  }
+
+  #nav-mobile nav a.nav-limited {
+    @apply md:max-xl:!hidden;
   }
 
   .nav-toggle-btn & > div {
@@ -210,6 +241,10 @@
 
     @variant lg {
       top: calc(var(--height-header-lg));
+    }
+
+    @variant xl {
+      top: calc(var(--height-header-xl));
     }
   }
 

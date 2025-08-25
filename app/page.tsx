@@ -1,3 +1,6 @@
+"use client";
+import { useState, useEffect, useRef } from "react";
+
 import Header from "../components/Header";
 import Hero from "../components/Hero";
 import Credentials from "../components/Credentials";
@@ -7,16 +10,52 @@ import Footer from "../components/Footer";
 import Copyright from "../components/Copyright";
 
 export default function Home() {
+  const [isSticky, setIsSticky] = useState(true);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const handleScroll = () => {
+      // Adjust this value based on when you want the header to become sticky
+      const scrollThreshold = 1;
+      if (window.scrollY < scrollThreshold) {
+        setIsSticky(false);
+      } else {
+        setIsSticky(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []); // Empty dependency array ensures this runs only once on mount
+
+  const elementRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const elementToStyle = elementRef.current;
+    if (!elementToStyle) return;
+
+    if (window.scrollY < 0) {
+      setIsSticky(false);
+    } else {
+      setIsSticky(true);
+    }
+  }, []);
+
   const marginClasses = "px-4 md:px-6 lg:px-14 xl:px-24";
   const marginDoubleClasses = "px-4 md:px-6 lg:px-28 xl:px-48";
   const marginVerticalClasses = "py-6 md:py-8 lg:py-12 xl:py-14";
-  const marginVerticalHeaderClasses = "py-4 lg:py-6 xl:py-8";
+  const marginVerticalHeaderClasses = "py-4 lg:py-6";
   const additionalClasses = "w-full max-w-[1440px]";
 
   return (
     <div className="mx-auto flex w-full flex-col items-center">
       {/* TODO: Remove when dark mode is complete and this is no longer needed */}
-      <div className="border-1 border-lake-blue-950 z-2000 fixed left-0 top-0 hidden border-l-0 border-t-0 bg-white p-2">
+      <div className="border-lake-blue-950 fixed left-0 top-0 z-[2000] hidden border border-l-0 border-t-0 bg-white p-2">
         <span className="md:hidden">Mobile</span>
         <span className="hidden md:max-lg:block">Tablet</span>
         <span className="hidden lg:max-xl:block">Desktop Small</span>
@@ -26,15 +65,19 @@ export default function Home() {
       {/* Header */}
       <header
         id="header"
-        className={`${marginClasses} ${marginVerticalHeaderClasses} ${additionalClasses}`}
+        className={`z-2000 fixed left-0 top-0 w-full transition-all duration-300 ${isSticky ? "bg-sky-blue-50/50 shadow-md backdrop-blur-lg" : "bg-transparent"}`}
       >
-        <Header />
+        <div
+          className={`${marginClasses} ${marginVerticalHeaderClasses} ${additionalClasses} w-full`}
+        >
+          <Header />
+        </div>
       </header>
 
       {/* Hero/Intro Section */}
       <section
         id="intro"
-        className={`${marginDoubleClasses} ${marginVerticalClasses} ${additionalClasses}`}
+        className={`${marginDoubleClasses} ${marginVerticalClasses} ${additionalClasses} margin-top-header-offset`}
       >
         <Hero />
       </section>
