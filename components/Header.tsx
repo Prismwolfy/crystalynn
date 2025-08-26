@@ -4,6 +4,7 @@ import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { Routes } from "../components/Routes";
 import LogoIcon from "./LogoIcon";
+import { IconResume, IconContact, IconHome } from "./IconPaths";
 
 type RoutePath = (typeof Routes)[keyof typeof Routes];
 
@@ -59,7 +60,7 @@ function NavLinksList({ links, onNavLinkClick }: NavLinkListProps) {
           {/* Render sublinks if present and in mobile view */}
           {link.sublinks && windowWidth < 1280 && (
             <div>
-              {link.sublinks.map((sublink, subIndex) => (
+              {link.sublinks.map((sublink) => (
                 <Link
                   key={sublink.id}
                   href={sublink.href}
@@ -78,6 +79,63 @@ function NavLinksList({ links, onNavLinkClick }: NavLinkListProps) {
   );
 }
 
+interface IconLinkProps {
+  id: string;
+  label: string;
+  href: RoutePath;
+  classes?: string;
+  iconName?: string;
+  width?: number;
+  height?: number;
+  viewBox?: string;
+  iconAdditionalClasses?: string;
+}
+
+interface IconLinkListProps {
+  iconLinks: IconLinkProps[];
+}
+
+function IconLinksList({ iconLinks }: IconLinkListProps) {
+  return (
+    <>
+      {iconLinks.map((iconLink) => (
+        <Link
+          key={iconLink.id}
+          href={iconLink.href}
+          className={iconLink.classes}
+        >
+          {/* Example: Render IconResume if iconName is "IconResume" */}
+          {iconLink.iconName === "IconResume" && (
+            <IconResume
+              width={iconLink.width}
+              height={iconLink.height}
+              viewBox={iconLink.viewBox}
+              iconAdditionalClasses={iconLink.iconAdditionalClasses}
+            />
+          )}
+          {iconLink.iconName === "IconContact" && (
+            <IconContact
+              width={iconLink.width}
+              height={iconLink.height}
+              viewBox={iconLink.viewBox}
+              iconAdditionalClasses={iconLink.iconAdditionalClasses}
+            />
+          )}
+          {iconLink.iconName === "IconHome" && (
+            <IconHome
+              width={iconLink.width}
+              height={iconLink.height}
+              viewBox={iconLink.viewBox}
+              iconAdditionalClasses={iconLink.iconAdditionalClasses}
+            />
+          )}
+          {iconLink.label}
+        </Link>
+      ))}
+    </>
+  );
+}
+
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -88,60 +146,114 @@ export default function Header() {
   const navLinkLimitedClasses =
     "md:max-lg:block md:max-lgxl:drop-shadow-text-glow nav-limited";
   const navLinkButtonClasses =
-    "ml-4 lg:ml-2 lgxl:ml-4 hover:bg-lake-blue-950 hover:text-white outline-2 outline-lake-blue-950";
-  const navSubLinkClasses = "pl-8 py-2 block text-base !hidden";
+    "md:ml-4 lg:ml-2 lgxl:ml-4 md:hover:bg-lake-blue-950 md:hover:text-white md:outline-2 md:outline-lake-blue-950";
+  const navSubLinkClasses = "!hidden sublink";
 
   const navLinks = [
     {
-      id: "2",
+      id: "3",
       label: "Recent Projects",
       href: Routes.recentProjects,
-      classes: `${navLinkSharedClasses} ${navLinkSimpleClasses} ${navLinkLimitedClasses} projects-desktop`,
-    },
-    {
-      id: "3",
-      label: "Recent Projects More",
-      href: "#",
-      classes: `${navLinkSharedClasses} ${navLinkSimpleClasses} projects-mobile !hidden`,
-      sublinks: [
-        {
-          id: "3-1",
-          label: "Project A",
-          href: "/projects/a" as RoutePath,
-          classes: `${navSubLinkClasses}`,
-        },
-        {
-          id: "3-2",
-          label: "Project B",
-          href: "/projects/b" as RoutePath,
-          classes: `${navSubLinkClasses}`,
-        },
-      ],
+      classes: `${navLinkSharedClasses} ${navLinkSimpleClasses} projects-desktop`,
     },
     {
       id: "4",
+      label: "Recent Projects",
+      href: Routes.recentProjects,
+      classes: `${navLinkSharedClasses} ${navLinkSimpleClasses} projects-mobile !hidden`,
+      sublinks: [
+        {
+          id: "4-1",
+          label: "Life, the Universe, & Everything",
+          href: Routes.ltue,
+          classes: `${navSubLinkClasses}`,
+        },
+        {
+          id: "4-2",
+          label: "Road Trippin'",
+          href: Routes.roadTrippin,
+          classes: `${navSubLinkClasses}`,
+        },
+        {
+          id: "4-3",
+          label: "Bookshelf",
+          href: Routes.bookshelf,
+          classes: `${navSubLinkClasses}`,
+        },
+        // {
+        //   id: "4-4",
+        //   label: "Modere",
+        //   href: Routes.modere,
+        //   classes: `${navSubLinkClasses}`,
+        // },
+      ],
+    },
+    {
+      id: "5",
       label: "About",
       href: Routes.about,
       classes: `${navLinkSharedClasses} ${navLinkSimpleClasses}`,
     },
     {
-      id: "5",
+      id: "6",
       label: "Recommendations",
       href: Routes.recommendations,
       classes: `${navLinkSharedClasses} ${navLinkSimpleClasses}`,
     },
     {
-      id: "6",
+      id: "7",
       label: "Resume",
       target: "_blank" as "_blank",
       href: Routes.resume,
-      classes: `${navLinkSharedClasses} ${navLinkSimpleClasses}`,
+      classes: `${navLinkSharedClasses} ${navLinkSimpleClasses} ${navLinkLimitedClasses} icon-mobile`,
     },
     {
-      id: "7",
+      id: "8",
       label: "Contact",
       href: Routes.contact,
-      classes: `${navLinkSharedClasses} ${navLinkButtonClasses} ${navLinkLimitedClasses}`,
+      classes: `${navLinkSharedClasses} ${navLinkButtonClasses} ${navLinkLimitedClasses} icon-mobile`,
+    },
+  ];
+
+  const navIconClasses =
+    "px-6 py-4 group text-center flex flex-col flex-grow items-center";
+
+  const navIconIconClasses =
+    "group-hover:bg-lake-blue-800 border-sky-blue-50 border-1 flex w-min items-center rounded-full p-3 lg:hidden mb-2";
+
+  const iconLinks = [
+    {
+      id: "1",
+      label: "Home",
+      href: Routes.home,
+      classes: `${navIconClasses}`,
+      iconName: "IconHome",
+      width: 60,
+      height: 60,
+      viewBox: "-10 -7 75 75",
+      iconAdditionalClasses: `${navIconIconClasses}`,
+    },
+    {
+      id: "2",
+      label: "Resume",
+      href: Routes.resume,
+      classes: `${navIconClasses}`,
+      iconName: "IconResume",
+      width: 60,
+      height: 60,
+      viewBox: "-10 -7 75 75",
+      iconAdditionalClasses: `${navIconIconClasses}`,
+    },
+    {
+      id: "3",
+      label: "Contact",
+      href: Routes.contact,
+      classes: `${navIconClasses}`,
+      iconName: "IconContact",
+      width: 60,
+      height: 60,
+      viewBox: "-10 -7 75 75",
+      iconAdditionalClasses: `${navIconIconClasses}`,
     },
   ];
 
@@ -156,7 +268,7 @@ export default function Header() {
         <div className="flex flex-1 items-center">
           <Link key="1" href={Routes.home}>
             <div className="smmd:gap-5 lgxl:gap-5 flex items-center gap-3 lg:gap-3">
-              <div className="bg-tree-green-500 lgxl:h-20 lgxl:w-20 flex h-12 w-12 flex-col items-center justify-center rounded-[40px] p-0.5 px-5 md:h-16 md:w-16">
+              <div className="bg-tree-green-500 lgxl:h-20 lgxl:w-20 flex h-12 w-12 flex-col items-center justify-center rounded-[40px] p-0.5 px-5 text-white md:h-16 md:w-16">
                 {/* Logo Extra Small SVG */}
                 <LogoIcon
                   width={25}
@@ -209,16 +321,29 @@ export default function Header() {
         {/* Mobile Menu */}
         <section
           id="nav-mobile"
-          className={`z-1000 animate-open-menu top-header-offset height-viewport-header-offset absolute left-0 w-full origin-top flex-col justify-center bg-black text-5xl text-white xl:hidden ${isMobileMenuOpen ? "flex" : "hidden"}`}
+          className={`z-1000 animate-open-menu top-header-offset bg-lake-blue-900/95 text-sky-blue-50 absolute left-0 w-full origin-top flex-col backdrop-blur-lg xl:hidden ${isMobileMenuOpen ? "flex" : "hidden"}`}
         >
-          <nav
-            className="flex flex-col items-center"
-            aria-label="mobile navigation"
-          >
-            <NavLinksList
-              links={navLinks}
-              onNavLinkClick={handleCloseMobileMenu}
-            />
+          <nav className="flex flex-col" aria-label="mobile navigation">
+            {/* <div className="border-sky-blue-50 border-1 flex w-min items-center rounded-full p-3">
+              <IconResume
+                width={32}
+                height={32}
+                viewBox={"0 0 60 60"}
+                iconAdditionalClasses={"lg:hidden"}
+              />
+            </div> */}
+            <div
+              id="nav-mobile-icons"
+              className="flex flex-row items-center justify-center md:hidden"
+            >
+              <IconLinksList iconLinks={iconLinks} />
+            </div>
+            <div id="nav-mobile-links">
+              <NavLinksList
+                links={navLinks}
+                onNavLinkClick={handleCloseMobileMenu}
+              />
+            </div>
           </nav>
         </section>
       </section>
