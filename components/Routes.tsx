@@ -11,5 +11,7 @@ export const Routes = {
   bookshelf: "#bookshelf",
   modere: "modere",
 
+  caseStudyLtue: "/docs/Crystalynn Meyer - Case Study LTUE.pdf",
+
   linkedIn: "https://www.linkedin.com/in/crystalynn-meyer/",
 };

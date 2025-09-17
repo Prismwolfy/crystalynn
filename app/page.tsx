@@ -8,6 +8,7 @@ import ProjectExample from "../components/ProjectExample";
 import Recommendations from "../components/Recommendations";
 import Footer from "../components/Footer";
 import Copyright from "../components/Copyright";
+import { Routes } from "../components/Routes";
 
 export default function Home() {
   const [isSticky, setIsSticky] = useState(true);
@@ -105,7 +106,7 @@ export default function Home() {
           imagePosition="left"
           background="sky"
           buttonText="Read the Case Study"
-          buttonUrl="https://www.figma.com/proto/LUrPeaALmjR8qwoVDD5CHD/LTUE-Case-Study-2024?node-id=1-74&t=FwAeN1Of5CJ05uFT-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1"
+          buttonUrl={Routes.caseStudyLtue}
         />
 
         <ProjectExample
