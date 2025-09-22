@@ -1,23 +1,11 @@
-import Image from "next/image";
+import { ProfileImage } from "../components/ProfileImage";
 
-export default function Hero() {
-  const profileImage = (
-    <>
-      <div className="bg-gradient-green-to-blue-vertical p-1.25 h-[250px] w-[250px] rounded-full md:max-lg:h-[175px] md:max-lg:w-[175px]">
-        <img
-          src="/images/crystalynn-meyer.jpg"
-          alt="Crystalynn Meyer"
-          className={`h-full w-full rounded-full`}
-        ></img>
-      </div>
-    </>
-  );
-
+export default function Intro() {
   return (
     <section className="flex w-full flex-wrap items-center justify-center gap-4 md:gap-6 lg:gap-14 xl:gap-24">
       {/* Profile Image - Top & Left */}
       <div className="flex w-full justify-center md:w-auto lg:hidden">
-        {profileImage}
+        <ProfileImage />
       </div>
 
       {/* Intro Text */}
@@ -37,7 +25,9 @@ export default function Hero() {
       </div>
 
       {/* Profile Image - Right */}
-      <div className="hidden lg:inline-block">{profileImage}</div>
+      <div className="hidden lg:inline-block">
+        <ProfileImage />
+      </div>
     </section>
   );
 }

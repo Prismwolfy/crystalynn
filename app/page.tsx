@@ -1,5 +1,5 @@
 import Layout from "./layout/mainLayout";
-import Hero from "../components/Hero";
+import Intro from "../components/Intro";
 import Credentials from "../components/Credentials";
 import ProjectExample from "../components/ProjectExample";
 import Recommendations from "../components/Recommendations";
@@ -9,12 +9,12 @@ import { LayoutClasses } from "../components/LayoutClasses";
 export default function Home() {
   return (
     <Layout>
-      {/* Hero/Intro Section */}
+      {/* Intro Section */}
       <section
         id="intro"
         className={`${LayoutClasses.marginDoubleClasses} ${LayoutClasses.marginVerticalClasses} ${LayoutClasses.additionalClasses} margin-top-header-offset`}
       >
-        <Hero />
+        <Intro />
       </section>
 
       {/* Credentials Section */}
