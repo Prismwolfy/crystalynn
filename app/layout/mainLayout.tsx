@@ -5,6 +5,7 @@ import { ReactNode } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import Copyright from "../../components/Copyright";
+import { LayoutClasses } from "../../components/LayoutClasses";
 
 interface LayoutProps {
   children: ReactNode;
@@ -47,12 +48,6 @@ export default function Layout({ children }: LayoutProps) {
     }
   }, []);
 
-  const marginClasses = "px-4 md:px-6 lg:px-14 xl:px-24";
-  const marginDoubleClasses = "px-4 md:px-6 lg:px-28 xl:px-48";
-  const marginVerticalClasses = "py-6 md:py-8 lg:py-12 xl:py-14";
-  const marginVerticalHeaderClasses = "py-4 lg:py-6";
-  const additionalClasses = "w-full max-w-[1440px]";
-
   return (
     <div className="mx-auto flex w-full flex-col items-center">
       {/* TODO: Remove when dark mode is complete and this is no longer needed */}
@@ -69,7 +64,7 @@ export default function Layout({ children }: LayoutProps) {
         className={`z-2000 fixed left-0 top-0 w-full transition-all duration-300 ${isSticky ? "bg-sky-blue-50/50 shadow-md backdrop-blur-lg" : "bg-transparent"}`}
       >
         <div
-          className={`${marginClasses} ${marginVerticalHeaderClasses} ${additionalClasses} w-full`}
+          className={`${LayoutClasses.marginClasses} ${LayoutClasses.marginVerticalHeaderClasses} ${LayoutClasses.additionalClasses} w-full`}
         >
           <Header />
         </div>
@@ -81,7 +76,7 @@ export default function Layout({ children }: LayoutProps) {
       {/* Footer */}
       <section
         id="footer"
-        className={`${marginDoubleClasses} ${marginVerticalClasses} ${additionalClasses}`}
+        className={`${LayoutClasses.marginDoubleClasses} ${LayoutClasses.marginVerticalClasses} ${LayoutClasses.additionalClasses}`}
       >
         <Footer />
       </section>
