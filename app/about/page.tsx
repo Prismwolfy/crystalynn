@@ -1,11 +1,15 @@
+"use client";
+
 import { useState } from "react";
+
+import Layout from "../layout/mainLayout";
 
 export default function Index() {
   const [showMoreReviews, setShowMoreReviews] = useState(false);
   const [showMoreReviewsSecond, setShowMoreReviewsSecond] = useState(false);
 
   return (
-    <div className="mx-auto flex min-h-screen w-full max-w-[360px] flex-col bg-white md:max-w-4xl lg:max-w-6xl">
+    <Layout>
       {/* Why I Love What I Do Section */}
       <section className="flex w-full flex-wrap items-start justify-center gap-6 px-4 pb-6">
         <div className="flex min-w-[360px] flex-col items-center gap-2.5">
@@ -611,6 +615,6 @@ export default function Index() {
           )}
         </div>
       </section>
-    </div>
+    </Layout>
   );
 }

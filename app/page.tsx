@@ -1,84 +1,18 @@
-"use client";
-import { useState, useEffect, useRef } from "react";
-
-import Header from "../components/Header";
+import Layout from "./layout/mainLayout";
 import Hero from "../components/Hero";
 import Credentials from "../components/Credentials";
 import ProjectExample from "../components/ProjectExample";
 import Recommendations from "../components/Recommendations";
-import Footer from "../components/Footer";
-import Copyright from "../components/Copyright";
 import { Routes } from "../components/Routes";
+import { LayoutClasses } from "../components/LayoutClasses";
 
 export default function Home() {
-  const [isSticky, setIsSticky] = useState(true);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    const handleScroll = () => {
-      // Adjust this value based on when you want the header to become sticky
-      const scrollThreshold = 1;
-      if (window.scrollY < scrollThreshold) {
-        setIsSticky(false);
-      } else {
-        setIsSticky(true);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    // Clean up the event listener on component unmount
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []); // Empty dependency array ensures this runs only once on mount
-
-  const elementRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const elementToStyle = elementRef.current;
-    if (!elementToStyle) return;
-
-    if (window.scrollY < 0) {
-      setIsSticky(false);
-    } else {
-      setIsSticky(true);
-    }
-  }, []);
-
-  const marginClasses = "px-4 md:px-6 lg:px-14 xl:px-24";
-  const marginDoubleClasses = "px-4 md:px-6 lg:px-28 xl:px-48";
-  const marginVerticalClasses = "py-6 md:py-8 lg:py-12 xl:py-14";
-  const marginVerticalHeaderClasses = "py-4 lg:py-6";
-  const additionalClasses = "w-full max-w-[1440px]";
-
   return (
-    <div className="mx-auto flex w-full flex-col items-center">
-      {/* TODO: Remove when dark mode is complete and this is no longer needed */}
-      <div className="border-lake-blue-950 fixed left-0 top-0 z-[2000] hidden border border-l-0 border-t-0 bg-white p-2">
-        <span className="md:hidden">Mobile</span>
-        <span className="hidden md:max-lg:block">Tablet</span>
-        <span className="hidden lg:max-xl:block">Desktop Small</span>
-        <span className="hidden xl:block">Desktop</span>
-      </div>
-
-      {/* Header */}
-      <header
-        id="header"
-        className={`z-2000 fixed left-0 top-0 w-full transition-all duration-300 ${isSticky ? "bg-sky-blue-50/50 shadow-md backdrop-blur-lg" : "bg-transparent"}`}
-      >
-        <div
-          className={`${marginClasses} ${marginVerticalHeaderClasses} ${additionalClasses} w-full`}
-        >
-          <Header />
-        </div>
-      </header>
-
+    <Layout>
       {/* Hero/Intro Section */}
       <section
         id="intro"
-        className={`${marginDoubleClasses} ${marginVerticalClasses} ${additionalClasses} margin-top-header-offset`}
+        className={`${LayoutClasses.marginDoubleClasses} ${LayoutClasses.marginVerticalClasses} ${LayoutClasses.additionalClasses} margin-top-header-offset`}
       >
         <Hero />
       </section>
@@ -86,7 +20,7 @@ export default function Home() {
       {/* Credentials Section */}
       <section
         id="credentials"
-        className={`${marginClasses} ${marginVerticalClasses} ${additionalClasses}`}
+        className={`${LayoutClasses.marginClasses} ${LayoutClasses.marginVerticalClasses} ${LayoutClasses.additionalClasses}`}
       >
         <Credentials />
       </section>
@@ -97,7 +31,7 @@ export default function Home() {
         className={`flex w-full flex-col items-center`}
       >
         <ProjectExample
-          classes={`${marginClasses} ${marginVerticalClasses}`}
+          classes={`${LayoutClasses.marginClasses} ${LayoutClasses.marginVerticalClasses}`}
           id="ltue"
           subheader="Life, the Universe, & Everything"
           header="Branding and Website Redesign"
@@ -110,7 +44,7 @@ export default function Home() {
         />
 
         <ProjectExample
-          classes={`${marginClasses} ${marginVerticalClasses}`}
+          classes={`${LayoutClasses.marginClasses} ${LayoutClasses.marginVerticalClasses}`}
           id="road-trippin"
           subheader="Road Trippin'"
           header="Mobile App Design"
@@ -123,7 +57,7 @@ export default function Home() {
         />
 
         <ProjectExample
-          classes={`${marginClasses} ${marginVerticalClasses}`}
+          classes={`${LayoutClasses.marginClasses} ${LayoutClasses.marginVerticalClasses}`}
           id="bookshelf"
           subheader="Bookshelf"
           header="Website Design"
@@ -136,7 +70,7 @@ export default function Home() {
         />
         {/* TODO: Unhide Modere when content is ready - don't forget nav */}
         <ProjectExample
-          classes={`${marginClasses} ${marginVerticalClasses} hidden`}
+          classes={`${LayoutClasses.marginClasses} ${LayoutClasses.marginVerticalClasses} hidden`}
           id="modere"
           subheader="Modere"
           header="Updated Design System"
@@ -152,26 +86,10 @@ export default function Home() {
       {/* Recommendations Section */}
       <section
         id="recommendations"
-        className={`${marginClasses} ${marginVerticalClasses} bg-sky-blue-100 flex w-full justify-center`}
+        className={`${LayoutClasses.marginClasses} ${LayoutClasses.marginVerticalClasses} bg-sky-blue-100 flex w-full justify-center`}
       >
         <Recommendations />
       </section>
-
-      {/* Footer */}
-      <section
-        id="footer"
-        className={`${marginDoubleClasses} ${marginVerticalClasses} ${additionalClasses}`}
-      >
-        <Footer />
-      </section>
-
-      {/* Copyright */}
-      <footer
-        id="copyright"
-        className={`bg-lake-blue-800 text-sky-blue-50 flex w-full items-center justify-center`}
-      >
-        <Copyright />
-      </footer>
-    </div>
+    </Layout>
   );
 }
