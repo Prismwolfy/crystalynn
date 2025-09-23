@@ -8,6 +8,7 @@ import PerformanceReviews from "../../components/PerformanceReviews";
 import Recommendations from "../../components/Recommendations";
 import { Routes } from "../../components/Routes";
 import { LayoutClasses } from "../../components/LayoutClasses";
+import { HorizontalRule } from "../../components/HorizontalRule";
 
 export default function Index() {
   return (
@@ -37,19 +38,7 @@ export default function Index() {
       </section>
 
       {/* Horizontal Divider */}
-      {/* 
-      <div className="flex h-0 w-full max-w-[1230px] items-center justify-center">
-        <svg
-          width="362"
-          height="2"
-          viewBox="0 0 362 2"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M1 1.25H361" stroke="#80B5D1" strokeLinecap="round" />
-        </svg>
-      </div>
-      */}
+      <HorizontalRule />
 
       {/* Performance Reviews Section */}
       {/* 
