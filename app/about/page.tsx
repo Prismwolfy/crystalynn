@@ -21,14 +21,12 @@ export default function Index() {
       </section>
 
       {/* Career Journey Section */}
-      {/* 
       <section
         id="career-journey"
-        className={`${LayoutClasses.marginDoubleClasses} ${LayoutClasses.marginVerticalClasses} ${LayoutClasses.additionalClasses}`}
+        className={`${LayoutClasses.marginClasses} ${LayoutClasses.marginVerticalClasses} bg-sky-blue-100 flex w-full justify-center`}
       >
         <CareerJourney />
       </section>
-      */}
 
       {/* Recognition Section */}
       {/* 

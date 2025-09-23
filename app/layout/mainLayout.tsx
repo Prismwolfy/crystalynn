@@ -51,7 +51,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="mx-auto flex w-full flex-col items-center">
       {/* TODO: Remove when dark mode is complete and this is no longer needed */}
-      <div className="border-lake-blue-950 fixed left-0 top-0 z-[5000] border border-l-0 border-t-0 bg-white p-2">
+      <div className="border-lake-blue-950 fixed left-0 top-0 z-[5000] hidden border border-l-0 border-t-0 bg-white p-2">
         <span className="md:hidden">Mobile</span>
         <span className="hidden md:max-lg:block">Tablet</span>
         <span className="hidden lg:max-xl:block">Desktop Small</span>

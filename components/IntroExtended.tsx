@@ -34,7 +34,7 @@ export default function HeroExtended() {
       {/* Intro Extended Text */}
       <div className="flex flex-1 flex-col items-start gap-2.5 lg:max-w-[710px]">
         <h3 className="text-lake-blue-950 w-full">Why I Love What I Do</h3>
-        <p className="text-body-lg lg:max-xl:text-lg">
+        <p className="text-body-lg">
           What I love most about UX design is{" "}
           <span className="font-bold">
             the chance to solve real problems for real people
@@ -48,7 +48,7 @@ export default function HeroExtended() {
           made a positive difference is what keeps me passionate about this work
           every day.
         </p>
-        <p className="text-body-lg lg:max-xl:text-lg">
+        <p className="text-body-lg">
           My{" "}
           <span className="font-bold">background in front-end development</span>{" "}
           gives me a practical lens through which I approach design: I
@@ -62,7 +62,7 @@ export default function HeroExtended() {
           </span>
           .
         </p>
-        <p className="text-body-lg lg:max-xl:text-lg">
+        <p className="text-body-lg">
           I'm big on mentoring, clear communication, and always{" "}
           <span className="font-bold">
             staying curious about how to improve
