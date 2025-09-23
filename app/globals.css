@@ -305,11 +305,11 @@
     @apply bg-tree-green-500 text-lake-blue-950;
   }
 
-  #recommendations-about-page #recommendations-about {
+  #recommendations-home #recommendations-resume {
     @apply !hidden;
   }
 
-  #recommendations #recommendations-resume {
+  #recommendations #recommendations-about {
     @apply !hidden;
   }
 }

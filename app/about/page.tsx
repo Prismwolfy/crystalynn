@@ -29,14 +29,12 @@ export default function Index() {
       </section>
 
       {/* Recognition Section */}
-      {/* 
       <section
         id="recognition"
         className={`${LayoutClasses.marginDoubleClasses} ${LayoutClasses.marginVerticalClasses} ${LayoutClasses.additionalClasses}`}
       >
         <Recognition />
       </section>
-      */}
 
       {/* Horizontal Divider */}
       {/* 
@@ -65,7 +63,7 @@ export default function Index() {
 
       {/* Recommendations Section */}
       <section
-        id="recommendations-about-page"
+        id="recommendations"
         className={`${LayoutClasses.marginClasses} ${LayoutClasses.marginVerticalClasses} bg-sky-blue-100 flex w-full justify-center`}
       >
         <Recommendations />

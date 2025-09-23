@@ -35,7 +35,7 @@ export default function ProjectExample({
       <div className="flex flex-1 flex-col items-start gap-6 xl:max-w-[460px]">
         <div className="flex w-full flex-col items-start gap-1.5 lg:gap-2.5">
           <div className="text-body-lg w-full">{subheader}</div>
-          <h4 className="gradient-green-to-blue-horizontal w-full leading-7">
+          <h4 className="gradient-green-to-blue-horizontal leading-7">
             {header}
           </h4>
           <div className="w-full">{description}</div>

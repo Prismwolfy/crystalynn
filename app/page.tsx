@@ -85,7 +85,7 @@ export default function Home() {
 
       {/* Recommendations Section */}
       <section
-        id="recommendations"
+        id="recommendations-home"
         className={`${LayoutClasses.marginClasses} ${LayoutClasses.marginVerticalClasses} bg-sky-blue-100 flex w-full justify-center`}
       >
         <Recommendations />

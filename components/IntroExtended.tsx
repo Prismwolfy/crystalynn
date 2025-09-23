@@ -17,7 +17,7 @@ export function ButtonGroup() {
 
 export default function HeroExtended() {
   const buttonGroupClasses =
-    "mt-5 w-full flex-col md:flex-row lg:flex-col xl:flex-row gap-5 justify-center";
+    "mt-4 w-full flex-col md:flex-row lg:flex-col xl:flex-row gap-4 justify-center";
 
   return (
     <section className="flex w-full flex-wrap items-center justify-center gap-4 md:gap-6 lg:items-start lg:gap-14 xl:gap-24">
