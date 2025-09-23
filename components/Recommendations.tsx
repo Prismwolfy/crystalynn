@@ -160,10 +160,25 @@ export default function Recommendations() {
       {/* Button Group */}
       <div className="smmdd:flex-row flex w-full flex-col gap-2.5 md:justify-center md:gap-5">
         {/* TODO: Add button back when About page is built */}
-        <Link href={Routes.about} className="button button-secondary hidden">
+        <Link
+          href={Routes.about}
+          id="recommendations-about"
+          className="button button-secondary"
+        >
           More About Me
         </Link>
-        <Link href={Routes.contact} className="button button-primary">
+        <Link
+          href={Routes.resume}
+          id="recommendations-resume"
+          className="button button-secondary"
+        >
+          See My Resume
+        </Link>
+        <Link
+          href={Routes.contact}
+          id="recommendations-contact"
+          className="button button-primary"
+        >
           Get in Touch
         </Link>
       </div>

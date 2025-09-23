@@ -5,6 +5,7 @@ import IntroExtended from "../../components/IntroExtended";
 import CareerJourney from "../../components/CareerJourney";
 import Recognition from "../../components/Recognition";
 import PerformanceReviews from "../../components/PerformanceReviews";
+import Recommendations from "../../components/Recommendations";
 import { Routes } from "../../components/Routes";
 import { LayoutClasses } from "../../components/LayoutClasses";
 
@@ -63,6 +64,14 @@ export default function Index() {
         <PerformanceReviews />
       </section>
       */}
+
+      {/* Recommendations Section */}
+      <section
+        id="recommendations-about-page"
+        className={`${LayoutClasses.marginClasses} ${LayoutClasses.marginVerticalClasses} bg-sky-blue-100 flex w-full justify-center`}
+      >
+        <Recommendations />
+      </section>
     </Layout>
   );
 }

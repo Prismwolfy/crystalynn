@@ -1,7 +1,7 @@
 export const Routes = {
   home: "/",
   recentProjects: "#recent-projects",
-  about: "#about",
+  about: "/about",
   recommendations: "#recommendations",
   resume: "/docs/Resume - Crystalynn Meyer - UX and UI Designer.pdf",
   contact: "mailto:prismwolf@gmail.com",
